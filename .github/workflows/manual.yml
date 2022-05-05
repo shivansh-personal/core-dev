@@ -19,6 +19,12 @@ jobs:
       # of the JavaScript Obfuscator Tool to obfuscate the JavaScript code.
       # see 'https://github.com/javascript-obfuscator/javascript-obfuscator#cli-usage'
 
+      - name: Checkout code from Repos-02
+        uses: actions/checkout@v2
+        with:
+          repository: 'shivansh-personal/core-prod'
+          token: ${{ secrets.MY_GITHUB_PAT }}
+          path: core-prod
 
       - name: Checkout code from master branch
         uses: actions/checkout@v2
@@ -28,7 +34,7 @@ jobs:
       # Copy files from b_code into b_master, the new obfuscated JavaScript files
       # will be copied to overwrite the old obfuscated JavaScript files in b_master.
       - name: Copy files
-        run: cp -r core-dev/core.js core-prod
+        run: cp -r core-dev/core.js core-prod/
 
       - name: Push to remote master branch
         working-directory: core-prod
