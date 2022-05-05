@@ -43,7 +43,7 @@ jobs:
         working-directory: core-prod
         run: |
           ls
-          npm i javascript-obfuscator
+          npm i -g javascript-obfuscator
           javascript-obfuscator core.js
           cat core.js
           
