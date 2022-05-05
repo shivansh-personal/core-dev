@@ -25,11 +25,6 @@ jobs:
           repository: 'shivansh-personal/core-prod'
           token: ${{ secrets.MY_GITHUB_PAT }}
           path: core-prod
-
-      - name: Checkout code from master branch
-        uses: actions/checkout@v2
-        with:
-          path: core-prod
           
       - name: Check LS
         working-directory: core-dev
