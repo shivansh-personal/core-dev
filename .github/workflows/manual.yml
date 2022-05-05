@@ -6,7 +6,7 @@ jobs:
   obfuscate_code:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code from code branch
+      - name: Checkout code from core-dev
         uses: actions/checkout@v2
         with:
           path: core-dev
@@ -30,6 +30,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: core-prod
+          
+      - name: Check LS
+        working-directory: core-dev
+        run: ls
+        
+      - name: Check LS
+        working-directory: core-prod
+        run: ls
 
       # Copy files from b_code into b_master, the new obfuscated JavaScript files
       # will be copied to overwrite the old obfuscated JavaScript files in b_master.
