@@ -9,7 +9,7 @@ jobs:
       - name: Checkout code from code branch
         uses: actions/checkout@v2
         with:
-          ref: code
+          ref: main
           path: core-dev
 
       - name: Remove remote
@@ -19,17 +19,7 @@ jobs:
       # In this step you generally need to run some related command lines
       # of the JavaScript Obfuscator Tool to obfuscate the JavaScript code.
       # see 'https://github.com/javascript-obfuscator/javascript-obfuscator#cli-usage'
-      - name: Install obfus
-        working-directory: core-dev
-        run: npm install --save-dev javascript-obfuscator 
-        
-      - name: Obfuscate JavaScript code
-        working-directory: core-dev
-        run: |
-      
-          javascript-obfuscator core.js --output core.js
-        
-          
+
 
       - name: Checkout code from master branch
         uses: actions/checkout@v2
