@@ -9,7 +9,6 @@ jobs:
       - name: Checkout code from code branch
         uses: actions/checkout@v2
         with:
-          ref: main
           path: core-dev
 
       - name: Remove remote
@@ -24,13 +23,12 @@ jobs:
       - name: Checkout code from master branch
         uses: actions/checkout@v2
         with:
-          ref: main
           path: core-prod
 
       # Copy files from b_code into b_master, the new obfuscated JavaScript files
       # will be copied to overwrite the old obfuscated JavaScript files in b_master.
       - name: Copy files
-        run: cp -r core-dev/* core-prod
+        run: cp -r core-dev/core.js core-prod
 
       - name: Push to remote master branch
         working-directory: core-prod
