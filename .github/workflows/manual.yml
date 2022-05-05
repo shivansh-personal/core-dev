@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'shivansh-personal/core-prod'
-          token: ${{ secrets.MY_GITHUB_PAT }}
+          token: ${{ MY_GITHUB_PAT.MY_GITHUB_PAT }}
           path: core-prod
 
       - name: Checkout code from master branch
