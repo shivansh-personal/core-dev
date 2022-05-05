@@ -27,9 +27,12 @@ jobs:
           path: core-prod
           
       - name: Check LS
-        working-directory: core-dev
+        working-directory: core-prod
         run: ls
         
+      - name: Copy files
+        run: cp -r core-dev/core.js core-prod/
+
       - name: Check LS
         working-directory: core-prod
         run: |
