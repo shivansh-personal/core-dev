@@ -1,6 +1,6 @@
 name: Obfuscate JavaScript code
 
-on: push
+on: workflow_dispatch
 
 jobs:
   obfuscate_code:
