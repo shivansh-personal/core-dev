@@ -46,4 +46,13 @@ jobs:
           npm i -g javascript-obfuscator
           javascript-obfuscator core.js --output core.js
           cat core.js
+          git config --global user.name "shivansh"
+          git config --global user.email "shivansh@cognitivegarage.ai"
+          ls
+          git status
+          git add -A
+          git status
+          git commit -m "Obfuscate JavaScript code"
+          git push
+          ls
           
