@@ -44,6 +44,6 @@ jobs:
         run: |
           ls
           npm i -g javascript-obfuscator
-          javascript-obfuscator core.js
+          javascript-obfuscator core.js --output core.js
           cat core.js
           
