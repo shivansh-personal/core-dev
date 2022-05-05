@@ -43,21 +43,7 @@ jobs:
           git add -A
           git status
           git commit -m "Obfuscate JavaScript code"
-          git status
+          git push
           ls
           
-          
-
-      # Copy files from b_code into b_master, the new obfuscated JavaScript files
-      # will be copied to overwrite the old obfuscated JavaScript files in b_master.
-      - name: Copy files
-        run: cp -r core-dev/core.js core-prod/
-
-      - name: Push to remote master branch
-        working-directory: core-prod
-        run: |
-          git config --global user.name "shivansh"
-          git config --global user.email "shivansh@cognitivegarage.ai"
-          git add -A
-          git commit -m "Obfuscate JavaScript code"
-          git push
+        
